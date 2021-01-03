@@ -1,0 +1,32 @@
+
+    <select class="form-control" (change)="onChange($event)">
+      <option value="">--Select Authors--</option>
+      <option *ngFor= 'let data of authors' [value]="data.id">{{data.first_name}}</option>
+    </select><br/><br/>
+    <table datatable class="row-border hover">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Content</th>
+          <th>Date</th>
+          <th>Author_Id</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of posts">
+          
+          <td>{{data.id}}</td>
+          
+            <td>{{data.title}}</td>
+            <td>{{data.description}}</td>
+            <td>{{data.content}}</td>
+            <td>{{data.date}}</td>
+            <td>{{data.author_id}}</td>
+            <td><a [routerLink]="['/post/edit/'+selectedAuthorId +'/'+data.id]">Edit</a></td>
+            
+          </tr>
+      </tbody>
+    </table>
+    <div>{{selectedAuthorId}}</div>

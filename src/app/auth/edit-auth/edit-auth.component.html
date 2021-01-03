@@ -1,0 +1,14 @@
+<form [formGroup]='editForm'(ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="name">FirstName:</label>
+        <input type="text" formControlName="first_name" name="firstname" id="name" class="form-control"
+            placeholder="Enter your firstname">
+            <label for="name">LastName:</label>
+        <input type="text" formControlName="last_name" name="lastname" id="name" class="form-control"
+            placeholder="Enter your lastname">
+        <label for="email">Email:</label>
+        <input type="email" formControlName="email" name="email" id="email" class="form-control"
+            placeholder="Enter your email">
+        <button type="submit" class="btn btn-success mt-2">Submit</button>
+    </div>
+</form>

@@ -1,0 +1,23 @@
+<button class="btn btn-success" style="float: right;"(click)="create()">Create</button><br/>
+    <table datatable [dtOptions]="dtOptions" class="row-border hover">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>FirstName</th>
+          <th>LastName</th>
+          <th>Email</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+  
+        <tr *ngFor="let data of authors">
+          <td>{{data.id}}</td>
+            <td>{{data.first_name}}</td>
+            <td>{{data.last_name}}</td>
+            <td>{{data.email}}</td>
+            <td><a [routerLink]="['/auth/edit/'+data.id]">Edit</a></td>
+          </tr>
+           
+      </tbody>
+    </table>
